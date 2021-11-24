@@ -1,0 +1,465 @@
+html, body {
+    height: 100%;
+    font-family: 'Comforter Brush', cursive;
+    background-color: crimson;
+    background-image: url("images/bloody.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+#container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pregame {
+    display: block; /* change it later */
+    text-align: center;
+    margin-bottom: 300px;
+}
+#startButton {
+    font-family: 'Comforter Brush', cursive;
+    display: block;
+    margin: 0 auto;
+    transform: scale(4);
+    margin-top: 80px;
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+#startButton:hover {
+    transform: scale(4.3);
+    background-image: url("images/bloody-text.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#img {
+    transition: transform 1s linear;
+}
+
+.animation {
+    animation-name: moveOut;
+    animation-duration: 1s;
+}
+@keyframes moveOut {
+    100% {
+        transform: scale(1.5);
+    }
+}
+.animationBlack {
+    animation-name: blackOut;
+    animation-duration: 1s;
+}
+@keyframes blackOut {
+    100%{
+        background-color: black;
+    }
+}
+.hidden {
+    display: none;
+}
+#bottom {
+    width: 100px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+#vertical {
+    width: 10px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    transform: translateX(45px);
+}
+#horizontal {
+    width: 150px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: white;
+    transform: translateX(45px);
+}
+#vertHanger {
+    width: 10px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: white;
+    transform: translate(185px, 55px);
+}
+#head {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid white;
+    transform: translate(170px, 140px);
+}
+#body {
+    width: 5px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: white;
+    transform: translate(187px, 225px);
+}
+#leftHand {
+    width: 5px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: white;
+    transform: rotate(30deg) translate(290px, 150px);
+}
+#rightHand {
+    width: 5px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: white;
+    transform: rotate(-30deg) translate(10px, 380px);
+}
+#hangman {
+    margin-top: 100px;
+}
+#game {
+    color: white;
+    font-size: 1.7rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+#hangman>img {
+    height: 500px;
+    width: 500px;
+}
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#alphabets {
+    width: 23%;
+}
+.alpha:disabled {
+    background-color: rgb(105, 10, 29);
+    pointer-events: none;
+}
+.alpha {
+    /* font-family: sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    border: 2px solid black; */
+    width: 100px;
+    height: 70px;
+    border: none;
+    color: white;
+    background-color: rgb(255, 0, 68);
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 rgb(143, 18, 43);
+    font-size: 3rem;
+    margin-bottom: 10px;
+    transition: ease-out 0.3s;
+    outline: none;
+    color: white;
+}
+.alpha:hover {
+    box-shadow: inset 100px 0 0 0 crimson;
+    cursor: pointer;
+}
+#restart {
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    padding: 10px;
+    border: 2px solid white;
+    transition: ease 0.3s;
+}
+#restart:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.underscore {
+    width: 60px;
+    height: 2px;
+    background-color: white;
+}
+#letters {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#letters div {
+    font-size: 5rem;
+    font-weight: 900;
+    color: white;
+}
+
+.horror-text {
+    margin-top: 10px;
+    margin-bottom: 0;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: flickering;
+    animation-timing-function: step-start;
+    color: #912914;
+    font-family: 'Comforter Brush', cursive;
+    font-size: 6rem;
+}
+
+#lose {
+    font-size: 10rem;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: flickering;
+    animation-timing-function: step-start;
+    position: absolute;
+    margin-top: 500px;
+}
+#win {
+    font-size: 10rem;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: flickering;
+    animation-timing-function: step-start;
+    position: absolute;
+    margin-top: 500px;
+}
+  
+  @keyframes flickering {
+    0% {
+      color: #912914;
+      text-shadow: none;
+      transform: skewX(0);
+    }
+    5% {
+      color: #912914;
+      text-shadow: none;
+      transform: skewX(0);
+    }
+    10% {
+      color: #912914;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(-15deg);
+    }
+    15% {
+      color: #ccc;
+      text-shadow: none;
+      transform: skewX(-15deg);
+    }
+    20% {
+      color: #912914;
+      text-shadow: none;
+      transform: skewX(0);
+    }
+    25% {
+      color: #ccc;
+      text-shadow: 2px 2px #912914;
+      transform: skewX(0);
+    }
+    30% {
+      color: #ccc;
+      text-shadow: 2px 2px #912914;
+      transform: skewX(0);
+    }
+    35% {
+      color: #ccc;
+      text-shadow: 2px 2px #912914;
+      transform: skewX(0);
+    }
+    37% {
+      color: #ccc;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(0);
+    }
+    40% {
+      color: #912914;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(0);
+    }
+    45% {
+      color: #912914;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(0);
+    }
+    50% {
+      color: #912914;
+      text-shadow: none;
+      transform: skewX(0);
+    }
+    55% {
+      color: #912914;
+      text-shadow: none;
+      transform: skewX(0);
+    }
+    60% {
+      color: #912914;
+      text-shadow: none;
+      transform: skewX(0);
+    }
+    65% {
+      color: #912914;
+      text-shadow: none;
+      transform: skewX(0);
+    }
+    68% {
+      color: #912914;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(0);
+    }
+    70% {
+      color: #912914;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(0);
+    }
+    75% {
+      color: #912914;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(10deg);
+    }
+    80% {
+      color: #912914;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(10deg);
+    }
+    85% {
+      color: #912914;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(10deg);
+    }
+    90% {
+      color: #912914;
+      text-shadow: none;
+      transform: skewX(0);
+    }
+    95% {
+      color: #912914;
+      text-shadow: 1px 1px #eee;
+      transform: skewX(0);
+    }
+    100% {
+      color: #912914;
+      text-shadow: none;
+      transform: skewX(0);
+    }
+  }
+#pregame>h1 {
+    color: rgb(219, 219, 219);
+}
+@media only screen and (max-width: 600px){
+    html, body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Comforter Brush', cursive;
+        background-color: crimson;
+        background-image: url("images/bloody.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+    }
+    #container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #pregame>h1 {
+        color: rgb(219, 219, 219);
+    }
+    #pregame {
+        display: block;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    #img {
+        width: 100%;
+    }
+    #game {
+        width: 100vw;
+        color: white;
+    }
+    #game>h2 {
+        text-align: center;
+        margin: 10px;
+    }
+    #main {
+        display: block;
+        width: 100%;
+    }
+    #hangman {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+    #hangman>img {
+        height: 100px;
+        width: 100px;
+    }
+    #letters {
+        display: flex;
+        justify-content: space-evenly;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 30px;
+        margin-top: 30px;        
+    }
+    #letters div {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+    .underscore {
+        width: 30px;
+        height: 2px;
+        background-color: white;
+    }
+    #alphabets {
+        position: fixed;
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        left: 0;
+        bottom: 5px;
+    }
+    .hidden {
+        display: none !important;
+    }
+    .alpha {
+        width: 50px;
+        height: 30px;
+        border: none;
+        color: white;
+        background-color: rgb(255, 0, 68);
+        border-radius: 4px;
+        box-shadow: inset 0 0 0 0 rgb(143, 18, 43);
+        font-size: 1rem;
+        margin-bottom: 10px;
+        transition: ease-out 0.3s;
+        outline: none;
+        color: white;
+    }
+    #win {
+        font-size: 5rem;
+        margin-top: 200px;
+    }
+    #lose {
+        font-size: 5rem;
+        margin-top: 200px;
+    }
+}
+  

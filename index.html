@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hangman for my dear professor</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Open+Sans&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+        <script src="hangman.js" defer></script>
+    </head>
+    <body>
+        <!-- before game  -->
+        <div id="container">
+            <div id="pregame">
+                <h1>Хайрт багшдаа зориулав</h1>
+                <img src="images/titleGray.png" alt="title" id="img">
+                <div id="bloodyDiv">
+                    <button id="startButton">Start</button>
+                </div>
+            </div>
+            <!-- in game -->
+            <div id="game">
+                <h1 class="horror-text">Hangman</h1>
+                <h2>Find the hidden word - Enter a letter <span><button id="restart">Restart</button></span></h2>
+                <div id="main">
+                    <div id="hangman">
+                        <!-- <div id="rightLeg"></div>
+                        <div id="leftLeg"></div>
+                        <div id="rightHand"></div>
+                        <div id="leftHand"></div>
+                        <div id="body"></div>
+                        <div id="head"></div>
+                        <div id="vertHanger"></div>
+                        <div id="horizontal"></div>
+                        <div id="vertical"></div>
+                        <div id="bottom"></div> -->
+                        <img src="images/clear.png" alt="hangman" id="hangmanImg">
+                    </div>
+                    <div id="letters"></div>
+                    <div id="alphabets">
+                        <button class="alpha" data-num="a">а</button>
+                        <button class="alpha" data-num="a">б</button>
+                        <button class="alpha" data-num="a">в</button>
+                        <button class="alpha" data-num="a">г</button>
+                        <button class="alpha" data-num="a">д</button>
+                        <button class="alpha" data-num="a">ж</button>
+                        <button class="alpha" data-num="a">и</button>
+                        <button class="alpha" data-num="a">й</button>
+                        <button class="alpha" data-num="a">к</button>
+                        <button class="alpha" data-num="a">л</button>
+                        <button class="alpha" data-num="a">м</button>
+                        <button class="alpha" data-num="a">н</button>
+                        <button class="alpha" data-num="a">о</button>
+                        <button class="alpha" data-num="a">ө</button>
+                        <button class="alpha" data-num="a">п</button>
+                        <button class="alpha" data-num="a">р</button>
+                        <button class="alpha" data-num="a">с</button>
+                        <button class="alpha" data-num="a">т</button>
+                        <button class="alpha" data-num="a">у</button>
+                        <button class="alpha" data-num="a">ү</button>
+                        <button class="alpha" data-num="a">х</button>
+                        <button class="alpha" data-num="a">ц</button>
+                        <button class="alpha" data-num="a">ш</button>
+                        <button class="alpha" data-num="a">э</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
