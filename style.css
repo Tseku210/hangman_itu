@@ -7,6 +7,9 @@ html, body {
     background-size: cover;
     margin: 0;
 }
+#hint {
+    color: white;
+}
 #container {
     width: 100%;
     height: 100%;
@@ -135,8 +138,11 @@ html, body {
 }
 #main {
     display: flex;
+    height: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 #alphabets {
     width: 23%;
@@ -199,6 +205,9 @@ html, body {
     align-items: center;
     flex-wrap: wrap;
 }
+.width {
+    width: 100% !important;
+}
 #letters div {
     font-size: 5rem;
     font-weight: 900;
@@ -224,7 +233,7 @@ html, body {
     animation-name: flickering;
     animation-timing-function: step-start;
     position: absolute;
-    margin-top: 500px;
+    margin-top: 00px;
 }
 #win {
     font-size: 10rem;
@@ -233,7 +242,7 @@ html, body {
     animation-name: flickering;
     animation-timing-function: step-start;
     position: absolute;
-    margin-top: 500px;
+    margin-top: 0px;
 }
   
   @keyframes flickering {
@@ -397,6 +406,8 @@ html, body {
     #main {
         display: flex;
         width: 100%;
+        height: 100%;
+        flex-direction: column;
     }
     #hangman {
         display: flex;
@@ -405,8 +416,8 @@ html, body {
         margin-top: 5px;
     }
     #hangman>img {
-        height: 100px;
-        width: 100px;
+        height: 200px;
+        width: 200px;
     }
     #letters {
         display: flex;
@@ -460,7 +471,7 @@ html, body {
     }
     #lose {
         font-size: 5rem;
-        margin-top: 200px;
+        margin-top: 0px;
     }
     #game > h1 {
         font-size: 3rem;
@@ -479,5 +490,8 @@ html, body {
     .alpha {
         height: 50px;
         width: 60px;
+    }
+    #main {
+        height: 100%;
     }
 }

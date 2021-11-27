@@ -1,9 +1,12 @@
 const startButton = document.querySelector("#startButton");
 const words = ["нохой", "муур", "жавхлан", "машин", "цуйван", "хуушуур", "монгол", "орос"];
+const hints = ["Хүний үнэнч нөхөр?", "Багалзуурдагч?", "Хөөрхөн багш?", "Түгжрээ үүсгэгч?", "Сэгсэрдэг хоол?", "Хайрдаг хоол?", "Таны улс?", "Архичин улс?"]
 const restartButton = document.querySelector("#restart");
 const letters = document.querySelector("#letters");
 const alphas = document.querySelectorAll(".alpha");
-const alphabets = document.querySelector("#alphabets")
+const alphabets = document.querySelector("#alphabets");
+const hangman = document.querySelector("#hangman");
+const hintTag = document.querySelector("#hintWord");
 
 let img = document.querySelector("#hangmanImg");
 
@@ -11,6 +14,7 @@ let answer = "";
 let guessed = [];
 let mistakes = 0;
 let indexes = [];
+let hint = "";
 
 alphas.forEach(alpha => {
     alpha.addEventListener("click", (e) => {
@@ -70,10 +74,7 @@ alphas.forEach(alpha => {
                 endGame();
             }
         }
-        console.log(guess)
-        console.log(guessed)
-        console.log(indexes)
-        console.log(mistakes)
+
     });
 })
 function checkIfGameWon(){
@@ -90,7 +91,9 @@ function checkIfGameWon(){
         win.id = "win";
         win.innerHTML = "You win!"
         letters.appendChild(win);
+        // img.src = "images/hangmanFull.png";
         img.classList.add("hidden");
+        letters.classList.add("width");
     }
 }
 function endGame(){
@@ -100,7 +103,7 @@ function endGame(){
     lost.id = "lose";
     lost.innerHTML = "You lose!"
     letters.appendChild(lost);
-    img.classList.add("hidden");
+    // img.classList.add("hidden");
 }
 function check(alpha){
     for (let i = 0; i < answer.length; i++){
@@ -133,6 +136,7 @@ startButton.addEventListener("click", () => {
 
     img.classList.remove("hidden");
     alphabets.classList.remove("hidden");
+    letters.classList.remove("width");
 
     img.src = "images/clear.png";
     guessed = [];
@@ -149,6 +153,7 @@ restartButton.addEventListener("click", () => {
 
     img.classList.remove("hidden");
     alphabets.classList.remove("hidden");
+    letters.classList.remove("width");
 
     img.src = "images/clear.png";
     guessed = [];
@@ -167,6 +172,7 @@ function resetRender(){
 function generateRandomWord(){
     const random = Math.floor(Math.random() * words.length);
     answer = words[random];
+    hint = hints[random];
 }
 function render(){
     for (let i = 0; i < answer.length; i++){
@@ -179,4 +185,5 @@ function render(){
         }
         letters.appendChild(underscore);
     }
+    hintTag.innerHTML = "Асуулт: " + hint;
 }
